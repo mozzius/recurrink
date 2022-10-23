@@ -81,7 +81,6 @@ export const HomeScreen = () => {
             <Text className="italic font-semibold">Press on a post</Text>
           )}
         </View>
-
         <FlashList
           data={postQuery.data}
           estimatedItemSize={20}
@@ -92,7 +91,6 @@ export const HomeScreen = () => {
             </TouchableOpacity>
           )}
         />
-
         <CreatePost />
       </View>
     </SafeAreaView>

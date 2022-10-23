@@ -1,5 +1,5 @@
 import { createTRPCReact } from "@trpc/react";
-import type { AppRouter } from "@acme/api";
+import type { AppRouter } from "@recurrink/api";
 /**
  * A set of typesafe hooks for consuming your API.
  */
@@ -16,7 +16,7 @@ const getBaseUrl = () => {
 import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
-import { transformer } from "@acme/api/transformer";
+import { transformer } from "@recurrink/api/transformer";
 
 export const TRPCProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
