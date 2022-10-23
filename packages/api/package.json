@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@recurrink/db": "*",
+    "@supabase/supabase-js": "^2.0.4",
     "@trpc/client": "10.0.0-proxy-beta.13",
     "@trpc/server": "10.0.0-proxy-beta.13",
     "superjson": "^1.9.1",

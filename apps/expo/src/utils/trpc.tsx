@@ -13,21 +13,34 @@ const getBaseUrl = () => {
  * A wrapper for your app that provides the TRPC context.
  * Use only in _app.tsx
  */
-import React from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
+import { useState } from "react";
 import { transformer } from "@recurrink/api/transformer";
+import { supabase } from "../../utils/supabase";
 
 export const TRPCProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
-  const [queryClient] = React.useState(() => new QueryClient());
-  const [trpcClient] = React.useState(() =>
+  const [queryClient] = useState(() => new QueryClient());
+  const [trpcClient] = useState(() =>
     trpc.createClient({
       transformer,
       links: [
         httpBatchLink({
           url: `${getBaseUrl()}/api/trpc`,
+          async headers() {
+            const {
+              data: { session },
+            } = await supabase.auth.getSession();
+            if (!session) {
+              return {};
+            } else {
+              return {
+                Authorization: `Bearer ${session.access_token}`,
+              };
+            }
+          },
         }),
       ],
     })

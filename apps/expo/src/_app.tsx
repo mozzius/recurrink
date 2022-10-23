@@ -1,11 +1,17 @@
+import "react-native-url-polyfill/auto";
 import { StatusBar } from "expo-status-bar";
-import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { TRPCProvider } from "./utils/trpc";
+import { useEffect, useState } from "react";
 
-import { HomeScreen } from "./screens/example";
+import { TRPCProvider } from "./utils/trpc";
+import { HomeScreen } from "./screens/home";
+import { supabase } from "../utils/supabase";
 
 export const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {});
+
   return (
     <TRPCProvider>
       <SafeAreaProvider>

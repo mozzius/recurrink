@@ -9,7 +9,7 @@ import { FlashList } from "@shopify/flash-list";
 import type { inferProcedureOutput } from "@trpc/server";
 import type { AppRouter } from "@recurrink/api";
 import { trpc } from "../utils/trpc";
-import React from "react";
+import { useState } from "react";
 
 const PostCard: React.FC<{
   post: inferProcedureOutput<AppRouter["post"]["all"]>[number];
@@ -30,8 +30,8 @@ const CreatePost: React.FC = () => {
     },
   });
 
-  const [title, onChangeTitle] = React.useState("");
-  const [content, onChangeContent] = React.useState("");
+  const [title, onChangeTitle] = useState("");
+  const [content, onChangeContent] = useState("");
 
   return (
     <View className="p-4 border-t-2 border-gray-500 flex flex-col">
@@ -62,7 +62,7 @@ const CreatePost: React.FC = () => {
 
 export const HomeScreen = () => {
   const postQuery = trpc.post.all.useQuery();
-  const [showPost, setShowPost] = React.useState<string | null>(null);
+  const [showPost, setShowPost] = useState<string | null>(null);
 
   return (
     <SafeAreaView>
