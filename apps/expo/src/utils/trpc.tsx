@@ -6,8 +6,8 @@ import type { AppRouter } from "@recurrink/api";
 export const trpc = createTRPCReact<AppRouter>();
 
 const getBaseUrl = () => {
-  return "http://localhost:3000";
-  // return "https://recurr.ink";
+  // return "http://localhost:3000";
+  return "https://recurr.ink";
 };
 
 /**
