@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Button, TextInput, View } from "react-native";
+import { Alert, Button, TextInput, View } from "react-native";
 import { supabase } from "../../../utils/supabase";
 
-export const RegisterScreen = () => {
+export const SignInScreen = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -16,6 +16,7 @@ export const RegisterScreen = () => {
       />
       <TextInput
         placeholder="Password"
+        keyboardType="email-address"
         secureTextEntry
         value={password}
         onChangeText={setPassword}
@@ -23,12 +24,12 @@ export const RegisterScreen = () => {
       <Button
         title="Sign in"
         onPress={async () => {
-          const { error } = await supabase.auth.signUp({
+          const { error } = await supabase.auth.signInWithPassword({
             email,
             password,
           });
           if (error) {
-            console.log(error);
+            Alert.alert(error.message);
           }
         }}
       />

@@ -67,9 +67,7 @@ export const HomeScreen = () => {
   return (
     <SafeAreaView>
       <View className="h-full w-full p-4">
-        <Text className="text-5xl font-bold mx-auto pb-2">
-          Create <Text className="text-indigo-500">T3</Text> Turbo
-        </Text>
+        <Text className="text-5xl font-bold mx-auto pb-2">Recurrink!</Text>
 
         <View className="py-2">
           {showPost ? (
