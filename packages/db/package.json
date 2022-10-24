@@ -5,7 +5,7 @@
   "types": "./index.ts",
   "license": "MIT",
   "scripts": {
-    "dev": "prisma studio --port 5556",
+    "dev": "echo 'DB Running'",
     "clean": "rm -rf .turbo node_modules",
     "db-push": "prisma db push",
     "db-generate": "prisma generate"
