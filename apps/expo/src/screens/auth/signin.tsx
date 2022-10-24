@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Alert, Button, TextInput, View } from "react-native";
-import { supabase } from "../../../utils/supabase";
+import { supabase } from "../../utils/supabase";
 
 export const SignInScreen = () => {
   const [email, setEmail] = useState("");

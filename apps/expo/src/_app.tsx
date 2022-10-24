@@ -7,7 +7,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import * as SplashScreen from "expo-splash-screen";
 
 import { TRPCProvider } from "./utils/trpc";
-import { supabase } from "../utils/supabase";
+import { supabase } from "./utils/supabase";
 import { AuthScreens } from "./screens/auth";
 import { SessionProvider } from "./utils/session";
 import { HomeScreen } from "./screens/home";

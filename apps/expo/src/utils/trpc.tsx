@@ -18,7 +18,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { httpBatchLink } from "@trpc/client";
 import { useState } from "react";
 import { transformer } from "@recurrink/api/transformer";
-import { supabase } from "../../utils/supabase";
+import { supabase } from "./supabase";
 
 export const TRPCProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
